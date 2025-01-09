@@ -27,8 +27,8 @@ const useProducts = () => {
           allFeatures.push(...productFeatures);
         });
 
-        setPreferences(allPreferences);
-        setFeatures(allFeatures);
+        setPreferences([...new Set(allPreferences)]);
+        setFeatures([...new Set(allFeatures)]);
       } catch (error) {
         console.error('Erro ao obter os produtos:', error);
       }
